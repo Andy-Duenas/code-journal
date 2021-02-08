@@ -10,13 +10,13 @@
 
 .column-head {
   width: 100vw;
-  border-color: red;
-  border-style: solid;
 }
 
 .row {
   display: flex;
   flex-wrap: wrap;
+  border-color: red;
+  border-style: solid;
 }
 
 .column-full,
@@ -24,6 +24,10 @@
   width: 100%;
   border-color: rebeccapurple;
   border-style: solid;
+}
+
+.square-img {
+  width: 100%;
 }
 
 @media screen and (min-width: 768px) {
