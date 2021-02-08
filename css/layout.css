@@ -9,13 +9,8 @@
 }
 
 .column-head {
-  width: 100vw;
-  background-color: lightgrey;
-  font-size: 25px;
-  padding-left: 3rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  width: 100%;
+  background-color: grey;
 }
 
 .row {
@@ -32,16 +27,31 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.right-column-half {
+  width: 100%;
+}
+
 .square-img {
-  width: 90%;
-  padding: 20px;
+  width: 100%;
+}
+
+.label-text {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 input,
 textarea {
   width: 100%;
+  height: 2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
   border-color: black;
   border-style: solid;
+  border-width: 2px;
+}
+
+textarea {
+  height: 4rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -56,5 +66,9 @@ textarea {
 
   .column-half {
     width: 50%;
+  }
+
+  .row {
+    flex-basis: calc(100% / 2);
   }
 }
