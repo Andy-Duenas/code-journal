@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,33 +13,45 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
   <header class="column-head">Code Journal</header>
   <main class="container">
     <div class="row">
-      <form>
-        <div class ="column-half">
-          <img src="images/placeholder-image-square.jpg" alt="place-holder" class="square-img">
-        </div>
-        <div class="column-half">
-          <label> Title
-            <input type="text">
-          </label>
-        </div>
-        <div class="column-half">
-          <label> Image URL
-            <input type="url">
-          </label>
-        </div>
-        <div class = "column-full">
-          <label> Notes
-            <textarea></textarea>
-          </label>
-        </div>
-      </form>
+      <div class="column-full">
+        <h2 class="top-title">New Entry</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div data-view="entry-form">
+        <form>
+          <div class="column-half">
+            <img src="images/placeholder-image-square.jpg" alt="place-holder" class="square-img">
+          </div>
+          <div class="column-half">
+            <label class="label-text" for="title"> Title </label>
+            <div>
+              <input type="text" id="title">
+            </div>
+          </div>
+          <div class="column-half">
+            <label class="label-text" for="url"> Image URL </label>
+            <div>
+              <input type="url" id="url">
+            </div>
+          </div>
+          <div class="column-full">
+            <label for="textarea"> Notes </label>
+            <div>
+              <textarea id="textarea"></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>
