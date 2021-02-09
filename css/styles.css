@@ -14,16 +14,11 @@
   position: relative;
   display: flex;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   color: white;
   background-color: steelblue;
   font-size: 20px;
   height: 3rem;
-}
-
-.column-full,
-.column-half {
-  line-height: 1.5rem;
 }
 
 .top-title,
@@ -35,7 +30,11 @@
 .square-img {
   width: 100%;
   height: 100%;
-  padding-bottom: 1rem;
+}
+
+.img-container {
+  width: 100%;
+  margin-bottom: 1rem;
 }
 
 .column-full-button {
@@ -79,5 +78,9 @@ textarea {
 
   .save-button {
     margin-right: 0.5rem;
+  }
+
+  .column-head {
+    padding-left: 12px;
   }
 }
