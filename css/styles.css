@@ -2,16 +2,7 @@
   background-color: whitesmoke;
 }
 
-.banner {
-  background-color: steelblue;
-  height: 3rem;
-  position: absolute;
-  width: 100%;
-  left: 0;
-}
-
 .column-head {
-  position: relative;
   display: flex;
   align-items: center;
   width: 100%;

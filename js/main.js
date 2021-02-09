@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-global-assign */
 /* global data */
 /* exported data */
@@ -9,34 +10,23 @@ $inputURL.addEventListener('input', function (event) {
   $img.setAttribute('src', event.target.value);
 });
 
-var $title = document.querySelector('#title');
-var $textArea = document.querySelector('#textarea');
-var $form = document.querySelector('.form');
+var $form = document.querySelector('form');
 
-var prevData = localStorage.getItem('jv-local-storage');
-
-if (prevData !== null) {
-  data = JSON.parse(prevData);
-}
+console.log($inputURL.value);
 
 $form.addEventListener('submit', function (event) {
   event.preventDefault();
   var entryObj = {};
-  entryObj.title = $title.value;
-  entryObj.src = $img.getAttribute('src');
-  entryObj.textArea = $textArea.value;
-  entryObj.dataEntry = data.nextEntryId;
+  entryObj.title = $form.elements.title.value;
+  entryObj.src = $form.elements.url.value;
+  entryObj.textArea = $form.elements.imgdescription.value;
+  entryObj.entryId = data.nextEntryId;
 
-  data.entries.push(entryObj);
-
+  data.entries.unshift(entryObj);
+  console.log(entryObj);
   data.nextEntryId++;
 
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
 
   $form.reset();
-});
-
-window.addEventListener('beforeunload', function (event) {
-  var dataJSON = JSON.stringify(data);
-  localStorage.setItem('jv-local-storage', dataJSON);
 });
