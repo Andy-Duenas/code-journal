@@ -1,3 +1,7 @@
+* {
+  background-color: whitesmoke;
+}
+
 .hidden {
   display: none !important;
 }
@@ -9,8 +13,13 @@
 }
 
 .column-head {
-  width: 100%;
-  background-color: grey;
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  color: white;
+  background-color: steelblue;
+  font-size: 20px;
+  height: 3rem;
 }
 
 .row {
@@ -21,22 +30,34 @@
 .column-full,
 .column-half {
   width: 100%;
+  line-height: 1.5rem;
 }
 
-.top-title {
+.top-title,
+.label-text,
+.column-head {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.right-column-half {
-  width: 100%;
 }
 
 .square-img {
   width: 100%;
+  height: 100%;
+  padding-bottom: 1rem;
 }
 
-.label-text {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.column-full-button {
+  width: 100%;
+  text-align: right;
+}
+
+.save-button {
+  width: 5rem;
+  height: 2rem;
+  border-style: none;
+  background-color: steelblue;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
 }
 
 input,
@@ -44,10 +65,10 @@ textarea {
   width: 100%;
   height: 2rem;
   margin-top: 0.5rem;
-  margin-bottom: 1rem;
-  border-color: black;
-  border-style: solid;
+  margin-bottom: 0.5rem;
   border-width: 2px;
+  border-radius: 5px;
+  background-color: white;
 }
 
 textarea {
@@ -70,5 +91,9 @@ textarea {
 
   .row {
     flex-basis: calc(100% / 2);
+  }
+
+  .save-button {
+    margin-right: 0.5rem;
   }
 }
