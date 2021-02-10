@@ -1,5 +1,6 @@
 * {
   background-color: whitesmoke;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .column-head {
@@ -12,21 +13,12 @@
   height: 3rem;
 }
 
-.entry-nav {
+a {
   color: white;
   background-color: steelblue;
   margin-left: 1rem;
   text-decoration: none;
   font-size: 18px;
-}
-
-.top-title,
-.label-text,
-.column-head,
-.title-entry,
-.description-entry,
-.entry-nav {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .square-img {
@@ -44,7 +36,8 @@
   text-align: right;
 }
 
-.save-button {
+.save-button,
+.new-entry-button {
   width: 5rem;
   height: 2rem;
   border-style: none;
@@ -67,6 +60,16 @@ textarea {
 
 textarea {
   height: 4rem;
+}
+
+.entry-space {
+  justify-content: space-between;
+  height: 5rem;
+  align-content: center;
+}
+
+.entry-top-title {
+  font-size: 35px;
 }
 
 .entry-list {
@@ -122,5 +125,9 @@ textarea {
 
   .entry-column {
     width: 100%;
+  }
+
+  .entry-top-title {
+    margin-left: 1rem;
   }
 }

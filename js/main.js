@@ -67,11 +67,28 @@ function treeMaker(entry) {
   return ulElement;
 }
 
-var mainPage = document.querySelector('[data-view="entries"]');
+var $entriesList = document.querySelector('[data-view="entries"]');
 
 window.addEventListener('DOMContentLoaded', function (event) {
   for (var i = 0; i < data.entries.length; i++) {
     var tree = treeMaker(data.entries[i]);
-    mainPage.appendChild(tree);
+    $entriesList.appendChild(tree);
   }
+});
+
+var $entriesLink = document.querySelector('a');
+var $newEntryButton = document.querySelector('.new-entry-button');
+var $entriesDiv = document.querySelector('.entries');
+var $entryformDiv = document.querySelector('.entry-form');
+
+$entriesLink.addEventListener('click', function (event) {
+  $entryformDiv.className = 'hidden';
+  $entriesDiv.className = 'entries';
+  data.view = 'entries';
+});
+
+$newEntryButton.addEventListener('click', function (event) {
+  $entriesDiv.className = 'hidden';
+  $entryformDiv.className = 'entries';
+  data.view = 'entry-form';
 });
