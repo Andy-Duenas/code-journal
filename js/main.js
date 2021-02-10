@@ -28,12 +28,6 @@ $form.addEventListener('submit', function (event) {
   $form.reset();
 });
 
-var treeResult = treeMaker(data.entries[0]);
-
-var rowElement = document.querySelector('main');
-
-rowElement.appendChild(treeResult);
-
 function treeMaker(entry) {
 
   var ulElement = document.createElement('ul');
@@ -70,6 +64,14 @@ function treeMaker(entry) {
   divDescription.textContent = entry.textArea;
   liDescription.appendChild(divDescription);
 
-  console.log(ulElement);
   return ulElement;
 }
+
+var mainPage = document.querySelector('main');
+
+window.addEventListener('DOMContentLoaded', function (event) {
+  for (var i = 0; i < data.entries.length; i++) {
+    var tree = treeMaker(data.entries[i]);
+    mainPage.appendChild(tree);
+  }
+});
