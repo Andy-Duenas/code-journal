@@ -62,6 +62,7 @@ textarea {
 
 .entry-list {
   list-style-type: none;
+  margin-bottom: 3rem;
 }
 
 .entry-item {
