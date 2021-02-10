@@ -67,7 +67,7 @@ function treeMaker(entry) {
   return ulElement;
 }
 
-var mainPage = document.querySelector('main');
+var mainPage = document.querySelector('[data-view="entries"]');
 
 window.addEventListener('DOMContentLoaded', function (event) {
   for (var i = 0; i < data.entries.length; i++) {
