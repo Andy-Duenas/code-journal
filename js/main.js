@@ -12,8 +12,6 @@ $inputURL.addEventListener('input', function (event) {
 
 var $form = document.querySelector('form');
 
-console.log($inputURL.value);
-
 $form.addEventListener('submit', function (event) {
   event.preventDefault();
   var entryObj = {};
@@ -23,7 +21,6 @@ $form.addEventListener('submit', function (event) {
   entryObj.entryId = data.nextEntryId;
 
   data.entries.unshift(entryObj);
-  console.log(entryObj);
   data.nextEntryId++;
 
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
