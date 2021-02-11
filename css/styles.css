@@ -21,6 +21,12 @@ a {
   font-size: 18px;
 }
 
+a,
+.save-button,
+.new-entry-button {
+  cursor: pointer;
+}
+
 .square-img {
   width: 100%;
   height: 100%;
