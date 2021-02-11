@@ -1,3 +1,4 @@
+/* eslint-disable no-delete-var */
 /* exported data */
 
 var data = {
@@ -8,7 +9,6 @@ var data = {
 };
 
 var prevData = localStorage.getItem('jv-local-storage');
-
 if (prevData !== null) {
   data = JSON.parse(prevData);
 }

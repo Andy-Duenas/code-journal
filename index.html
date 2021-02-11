@@ -15,15 +15,13 @@
 <body>
   <div class="container">
     <div class="row">
-      <header class="column-head">Code Journal</header>
+      <header class="column-head">Code Journal <a>Entries</a></header>
     </div>
     <main>
-      <div class="row">
+      <div data-view="entry-form" class="entry-form">
         <div class="column-full">
-          <h1 class="top-title">New Entry</h1>
+          <h1>New Entry</h1>
         </div>
-      </div>
-      <div data-view="entry-form">
         <form>
           <div class="row">
             <div class="column-half">
@@ -54,6 +52,14 @@
             <button type="submit" class="save-button">Save</button>
           </div>
         </form>
+      </div>
+      <div data-view="entries" class="entries">
+        <div class="row entry-space">
+          <div class="entry-top-title">Entries</div>
+          <button class="new-entry-button" type="button">NEW</button>
+          </div>
+        <ul class="entry-list">
+        </ul>
       </div>
     </main>
   </div>
