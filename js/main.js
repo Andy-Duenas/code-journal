@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable no-console */
 /* eslint-disable no-global-assign */
 /* global data */
@@ -102,8 +103,16 @@ $newEntryButton.addEventListener('click', function (event) {
 });
 
 function editEntry(event) {
-  console.log($ulElement);
-  console.log(event.target);
+  if (event.target.matches('button')) {
+    var target = event.target.closest('.entry-item');
+
+    for (var k = 0; k < data.entries.length; k++) {
+      if (target.getAttribute('data-entry-id') == data.entries[k].entryId) {
+        data.editing = data.entries[k];
+        console.log(data);
+      }
+    }
+  }
 }
 
 $ulElement.addEventListener('click', editEntry);
