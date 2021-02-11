@@ -75,7 +75,6 @@ function addToTree(event) {
     $ulElement.appendChild(tree);
   }
 }
-
 window.addEventListener('DOMContentLoaded', addToTree);
 
 var $entriesLink = document.querySelector('a');
@@ -101,3 +100,10 @@ $newEntryButton.addEventListener('click', function (event) {
   $entryformDiv.className = 'entries';
   data.view = 'entry-form';
 });
+
+function editEntry(event) {
+  console.log($ulElement);
+  console.log(event.target);
+}
+
+$ulElement.addEventListener('click', editEntry);
