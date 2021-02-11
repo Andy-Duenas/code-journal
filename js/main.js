@@ -36,7 +36,6 @@ function treeMaker(entry) {
 
   var liImg = document.createElement('li');
   liImg.setAttribute('class', 'entry-item');
-  $ulElement.appendChild(liImg);
 
   var container = document.createElement('div');
   container.setAttribute('class', 'container-column');
@@ -55,6 +54,10 @@ function treeMaker(entry) {
   divTitle.setAttribute('class', 'title-entry');
   divTitle.textContent = entry.title;
   columnRight.appendChild(divTitle);
+
+  var editIcon = document.createElement('button');
+  editIcon.setAttribute('class', 'fas fa-edit');
+  divTitle.appendChild(editIcon);
 
   var divDescription = document.createElement('div');
   divDescription.setAttribute('class', 'description-entry');
