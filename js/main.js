@@ -29,17 +29,19 @@ $form.addEventListener('submit', function (event) {
   $entriesDiv.className = 'entries';
   data.view = 'entries';
   $form.reset();
-  window.location.reload();
 });
+
+var ulElement = document.querySelector('ul');
 
 function treeMaker(entry) {
 
-  var ulElement = document.createElement('ul');
-  ulElement.setAttribute('class', 'entry-list');
+  var container = document.createElement('div');
+  container.setAttribute('class', 'container-column');
+  ulElement.appendChild(container);
 
   var liImg = document.createElement('li');
   liImg.setAttribute('class', 'entry-item');
-  ulElement.appendChild(liImg);
+  container.appendChild(liImg);
 
   var imgTag = document.createElement('img');
   imgTag.setAttribute('class', 'img-entry');
@@ -48,7 +50,7 @@ function treeMaker(entry) {
 
   var columnRight = document.createElement('div');
   columnRight.setAttribute('class', 'entry-column');
-  ulElement.appendChild(columnRight);
+  container.appendChild(columnRight);
 
   var liTitle = document.createElement('li');
   liTitle.setAttribute('class', 'entry-item');

@@ -80,7 +80,6 @@ textarea {
 
 .entry-list {
   list-style-type: none;
-  margin-bottom: 3rem;
 }
 
 .entry-item {
@@ -89,18 +88,22 @@ textarea {
 
 .img-entry {
   width: 100%;
-  height: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .title-entry {
   width: 100%;
-  margin-bottom: 2rem;
   font-size: 20px;
+  margin-bottom: 1rem;
 }
 
 .description-entry {
   width: 100%;
+  margin-bottom: 1rem;
+}
+
+.container-column {
+  margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -120,20 +123,21 @@ textarea {
     padding-left: 12px;
   }
 
-  .entry-list {
-    display: flex;
-  }
-
   .img-entry {
     width: 90%;
-    height: 100%;
+    height: 90%;
   }
 
   .entry-column {
-    width: 100%;
+    width: 90%;
+    height: 90%;
   }
 
   .entry-top-title {
     margin-left: 1rem;
+  }
+
+  .container-column {
+    display: flex;
   }
 }
