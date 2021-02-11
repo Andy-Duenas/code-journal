@@ -34,43 +34,35 @@ $form.addEventListener('submit', function (event) {
 
 function treeMaker(entry) {
 
-  var container = document.createElement('div');
-  container.setAttribute('class', 'container-column');
-
   var liImg = document.createElement('li');
   liImg.setAttribute('class', 'entry-item');
-  container.appendChild(liImg);
+  $ulElement.appendChild(liImg);
+
+  var container = document.createElement('div');
+  container.setAttribute('class', 'container-column');
+  liImg.appendChild(container);
 
   var imgTag = document.createElement('img');
   imgTag.setAttribute('class', 'img-entry');
   imgTag.setAttribute('src', entry.src);
-  liImg.appendChild(imgTag);
+  container.appendChild(imgTag);
 
   var columnRight = document.createElement('div');
   columnRight.setAttribute('class', 'entry-column');
   container.appendChild(columnRight);
 
-  var liTitle = document.createElement('li');
-  liTitle.setAttribute('class', 'entry-item');
-  columnRight.appendChild(liTitle);
-
   var divTitle = document.createElement('div');
   divTitle.setAttribute('class', 'title-entry');
   divTitle.textContent = entry.title;
-  liTitle.appendChild(divTitle);
-
-  var liDescription = document.createElement('li');
-  liDescription.setAttribute('class', 'entry-item');
-  columnRight.appendChild(liDescription);
+  columnRight.appendChild(divTitle);
 
   var divDescription = document.createElement('div');
   divDescription.setAttribute('class', 'description-entry');
   divDescription.textContent = entry.textArea;
-  liDescription.appendChild(divDescription);
+  columnRight.appendChild(divDescription);
 
-  return container;
+  return liImg;
 }
-
 var $ulElement = document.querySelector('.entry-list');
 var tree;
 function addToTree(event) {

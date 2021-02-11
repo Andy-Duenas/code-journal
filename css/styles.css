@@ -81,44 +81,48 @@ textarea {
 .entry-list {
   list-style-type: none;
   width: 100%;
+  height: 100%;
 }
 
 .entries {
   width: 100%;
+  height: 100%;
 }
 
 .entry-item {
   width: 100%;
+  height: 100%;
 }
 
 .img-entry {
   width: 100%;
+  height: 100%;
+  overflow: hidden;
   margin-bottom: 1rem;
 }
 
 .title-entry {
   width: 100%;
+  height: 100%;
   font-size: 20px;
   margin-bottom: 1rem;
 }
 
 .description-entry {
   width: 100%;
+  height: 100%;
   margin-bottom: 1rem;
 }
 
 .container-column {
   width: 100%;
+  height: 100%;
   margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 768px) {
   .column-half {
     width: 50%;
-  }
-
-  .row {
-    flex-basis: calc(100% / 2);
   }
 
   .save-button {
@@ -130,13 +134,14 @@ textarea {
   }
 
   .img-entry {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
   }
 
   .entry-column {
     width: 90%;
     height: 90%;
+    margin-left: 1rem;
   }
 
   .entry-list {
