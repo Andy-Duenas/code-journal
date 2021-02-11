@@ -36,6 +36,7 @@ function treeMaker(entry) {
 
   var liImg = document.createElement('li');
   liImg.setAttribute('class', 'entry-item');
+  liImg.setAttribute('data-entry-id', entry.entryId);
 
   var container = document.createElement('div');
   container.setAttribute('class', 'container-column');
