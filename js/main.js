@@ -101,15 +101,30 @@ $newEntryButton.addEventListener('click', function (event) {
   $entryformDiv.className = 'entries';
   data.view = 'entry-form';
 });
+var titleChange = document.querySelector('.change-title');
+var buttonChange = document.querySelector('save-button');
+
+function prePopulate(m) {
+  $entriesDiv.className = 'hidden';
+  $entryformDiv.className = 'entries';
+  data.view = 'entry-form';
+  console.log(m);
+  console.log(m.title);
+  $form.elements.title.value = m.title;
+  $form.elements.url.value = m.src;
+  $form.elements.imgdescription.value = m.textArea;
+  $img.setAttribute('src', m.src);
+  titleChange.textContent = 'Edit Entry';
+  buttonChange.textContent = 'SAVE';
+}
 
 function editEntry(event) {
   if (event.target.matches('button')) {
     var target = event.target.closest('.entry-item');
-
     for (var k = 0; k < data.entries.length; k++) {
       if (target.getAttribute('data-entry-id') == data.entries[k].entryId) {
         data.editing = data.entries[k];
-        console.log(data);
+        prePopulate(data.editing);
       }
     }
   }
