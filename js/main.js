@@ -28,16 +28,14 @@ $form.addEventListener('submit', function (event) {
   $entryformDiv.className = 'hidden';
   $entriesDiv.className = 'entries';
   data.view = 'entries';
+  $ulElement.prepend(treeMaker(entryObj));
   $form.reset();
 });
-
-var ulElement = document.querySelector('ul');
 
 function treeMaker(entry) {
 
   var container = document.createElement('div');
   container.setAttribute('class', 'container-column');
-  ulElement.appendChild(container);
 
   var liImg = document.createElement('li');
   liImg.setAttribute('class', 'entry-item');
@@ -70,17 +68,19 @@ function treeMaker(entry) {
   divDescription.textContent = entry.textArea;
   liDescription.appendChild(divDescription);
 
-  return ulElement;
+  return container;
 }
 
-var $entriesList = document.querySelector('[data-view="entries"]');
-
-window.addEventListener('DOMContentLoaded', function (event) {
+var $ulElement = document.querySelector('.entry-list');
+var tree;
+function addToTree(event) {
   for (var i = 0; i < data.entries.length; i++) {
-    var tree = treeMaker(data.entries[i]);
-    $entriesList.appendChild(tree);
+    tree = treeMaker(data.entries[i]);
+    $ulElement.appendChild(tree);
   }
-});
+}
+
+window.addEventListener('DOMContentLoaded', addToTree);
 
 var $entriesLink = document.querySelector('a');
 var $newEntryButton = document.querySelector('.new-entry-button');
