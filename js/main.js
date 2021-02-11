@@ -25,7 +25,11 @@ $form.addEventListener('submit', function (event) {
 
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
 
+  $entryformDiv.className = 'hidden';
+  $entriesDiv.className = 'entries';
+  data.view = 'entries';
   $form.reset();
+  window.location.reload();
 });
 
 function treeMaker(entry) {
@@ -80,6 +84,13 @@ var $entriesLink = document.querySelector('a');
 var $newEntryButton = document.querySelector('.new-entry-button');
 var $entriesDiv = document.querySelector('.entries');
 var $entryformDiv = document.querySelector('.entry-form');
+
+if (data.view === 'entry-form') {
+  $entriesDiv.className = 'hidden';
+}
+if (data.view === 'entries') {
+  $entryformDiv.className = 'hidden';
+}
 
 $entriesLink.addEventListener('click', function (event) {
   $entryformDiv.className = 'hidden';
