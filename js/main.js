@@ -50,8 +50,6 @@ function check(insert) {
       insert.entryId = z;
 
       $li[z].replaceWith(treeMaker(insert));
-      console.log('li', $li[z]);
-      console.log('data', data);
     }
   }
 }
@@ -141,21 +139,15 @@ function prePopulate(m) {
   $form.elements.imgdescription.value = m.textArea;
   $img.setAttribute('src', m.src);
   titleChange.textContent = 'Edit Entry';
-  // console.log('data', data);
+
 }
 
 function editEntry(event) {
-  console.log($ulElement);
-  console.log('event.target', event.target);
   if (event.target.matches('button')) {
     var target = event.target.closest('.entry-item');
     for (var k = 0; k < data.entries.length; k++) {
-      console.log('target', target.getAttribute('data-entry-id'));
-      console.log('data', data.entries[k].entryId);
       if (target.getAttribute('data-entry-id') == data.entries[k].entryId) {
-        console.log('Found');
         data.editing = data.entries[k];
-        // console.log(data.editing);
         prePopulate(data.editing);
       }
     }
