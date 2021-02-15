@@ -31,9 +31,7 @@ $form.addEventListener('submit', function (event) {
     data.nextEntryId++;
     $ulElement.prepend(treeMaker(entryObj));
   }
-
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
-
   $entryformDiv.className = 'hidden';
   $entriesDiv.className = 'entries';
   data.view = 'entries';
@@ -130,16 +128,15 @@ $newEntryButton.addEventListener('click', function (event) {
 
 var titleChange = document.querySelector('.change-title');
 
-function prePopulate(m) {
+function prePopulate(dataToEdit) {
   $entriesDiv.className = 'hidden';
   $entryformDiv.className = 'entries';
   data.view = 'entry-form';
-  $form.elements.title.value = m.title;
-  $form.elements.url.value = m.src;
-  $form.elements.imgdescription.value = m.textArea;
-  $img.setAttribute('src', m.src);
+  $form.elements.title.value = dataToEdit.title;
+  $form.elements.url.value = dataToEdit.src;
+  $form.elements.imgdescription.value = dataToEdit.textArea;
+  $img.setAttribute('src', dataToEdit.src);
   titleChange.textContent = 'Edit Entry';
-
 }
 
 function editEntry(event) {
