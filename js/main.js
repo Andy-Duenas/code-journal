@@ -23,7 +23,7 @@ $form.addEventListener('submit', function (event) {
   entryObj.textArea = $form.elements.imgdescription.value;
 
   if (data.editing != null) {
-    check(entryObj);
+    checkForPrevData(entryObj);
     data.editing = null;
   } else {
     entryObj.entryId = data.nextEntryId;
@@ -40,16 +40,16 @@ $form.addEventListener('submit', function (event) {
   $form.reset();
 });
 
-function check(insert) {
+function checkForPrevData(dataToUpdate) {
   var $li = document.querySelectorAll('li');
   for (var z = 0; z < data.entries.length; z++) {
     if (data.editing.entryId == data.entries[z].entryId) {
-      data.entries[z].title = insert.title;
-      data.entries[z].textArea = insert.textArea;
-      data.entries[z].src = insert.src;
-      insert.entryId = z;
+      data.entries[z].title = dataToUpdate.title;
+      data.entries[z].textArea = dataToUpdate.textArea;
+      data.entries[z].src = dataToUpdate.src;
+      dataToUpdate.entryId = z;
 
-      $li[z].replaceWith(treeMaker(insert));
+      $li[z].replaceWith(treeMaker(dataToUpdate));
     }
   }
 }
