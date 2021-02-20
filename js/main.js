@@ -13,17 +13,18 @@ var $entriesLink = document.querySelector('a');
 var $newEntryButton = document.querySelector('.new-entry-button');
 var $entriesDiv = document.querySelector('.entries');
 var $entryformDiv = document.querySelector('.entry-form');
+
 var $deleteButton = document.querySelector('.delete-button');
-var $deleteBackground = document.querySelector('.background');
+var $deleteBackground = document.querySelector('.background-off');
+var $deleteButtonForReal = document.querySelector('.delete-button-perm');
+var $cancelDelete = document.querySelector('.cancel-button');
 
 $inputURL.addEventListener('input', function (event) {
   $img.setAttribute('src', event.target.value);
 });
 
 $form.addEventListener('submit', function (event) {
-
   event.preventDefault();
-
   var entryObj = {};
   entryObj.title = $form.elements.title.value;
   entryObj.src = $form.elements.url.value;
@@ -156,8 +157,16 @@ function editEntry(event) {
 
 $ulElement.addEventListener('click', editEntry);
 
-function handleDelete(event) {
-  $deleteBackground.className = 'background';
-}
+$deleteButton.addEventListener('click', function (event) {
 
-$deleteButton.addEventListener('click', handleDelete);
+  $deleteBackground.className = 'background';
+
+});
+
+$cancelDelete.addEventListener('click', function (event) {
+  $deleteBackground.className = 'background-off';
+});
+
+$deleteButtonForReal.addEventListener('click', function (event) {
+
+});
