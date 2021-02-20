@@ -14,6 +14,7 @@ var $newEntryButton = document.querySelector('.new-entry-button');
 var $entriesDiv = document.querySelector('.entries');
 var $entryformDiv = document.querySelector('.entry-form');
 var $deleteButton = document.querySelector('.delete-button');
+var $deleteBackground = document.querySelector('.background');
 
 $inputURL.addEventListener('input', function (event) {
   $img.setAttribute('src', event.target.value);
@@ -154,3 +155,9 @@ function editEntry(event) {
 }
 
 $ulElement.addEventListener('click', editEntry);
+
+function handleDelete(event) {
+  $deleteBackground.className = 'background';
+}
+
+$deleteButton.addEventListener('click', handleDelete);
