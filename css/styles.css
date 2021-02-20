@@ -21,6 +21,7 @@ a {
   font-size: 18px;
 }
 
+.delete-button,
 a,
 .save-button,
 .new-entry-button {
@@ -39,7 +40,12 @@ a,
 
 .column-full-button {
   width: 100%;
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
+}
+
+.invisible {
+  visibility: hidden;
 }
 
 .save-button,
@@ -51,6 +57,16 @@ a,
   border-radius: 5px;
   color: white;
   font-size: 20px;
+}
+
+.delete-button {
+  width: 5rem;
+  height: 2rem;
+  border-style: none;
+  background-color: lightcoral;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
 }
 
 input,
@@ -133,8 +149,9 @@ textarea {
     width: 50%;
   }
 
-  .save-button {
-    margin-right: 0.5rem;
+  .column-full-button {
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
   }
 
   .column-head {

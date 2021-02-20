@@ -6,12 +6,18 @@
 
 var $inputURL = document.querySelector('#url');
 var $img = document.querySelector('.square-img');
+var $form = document.querySelector('form');
+var $ulElement = document.querySelector('.entry-list');
+var $titleChange = document.querySelector('.change-title');
+var $entriesLink = document.querySelector('a');
+var $newEntryButton = document.querySelector('.new-entry-button');
+var $entriesDiv = document.querySelector('.entries');
+var $entryformDiv = document.querySelector('.entry-form');
+var $deleteButton = document.querySelector('.delete-button');
 
 $inputURL.addEventListener('input', function (event) {
   $img.setAttribute('src', event.target.value);
 });
-
-var $form = document.querySelector('form');
 
 $form.addEventListener('submit', function (event) {
 
@@ -88,8 +94,8 @@ function treeMaker(entry) {
   return liImg;
 }
 
-var $ulElement = document.querySelector('.entry-list');
 var tree;
+
 function addToTree(event) {
   for (var i = 0; i < data.entries.length; i++) {
     tree = treeMaker(data.entries[i]);
@@ -98,11 +104,6 @@ function addToTree(event) {
 }
 
 window.addEventListener('DOMContentLoaded', addToTree);
-
-var $entriesLink = document.querySelector('a');
-var $newEntryButton = document.querySelector('.new-entry-button');
-var $entriesDiv = document.querySelector('.entries');
-var $entryformDiv = document.querySelector('.entry-form');
 
 if (data.view === 'entry-form') {
   $entriesDiv.className = 'hidden';
@@ -126,8 +127,6 @@ $newEntryButton.addEventListener('click', function (event) {
   data.view = 'entry-form';
 });
 
-var titleChange = document.querySelector('.change-title');
-
 function prePopulate(dataToEdit) {
   $entriesDiv.className = 'hidden';
   $entryformDiv.className = 'entries';
@@ -136,7 +135,7 @@ function prePopulate(dataToEdit) {
   $form.elements.url.value = dataToEdit.src;
   $form.elements.imgdescription.value = dataToEdit.textArea;
   $img.setAttribute('src', dataToEdit.src);
-  titleChange.textContent = 'Edit Entry';
+  $titleChange.textContent = 'Edit Entry';
 }
 
 function editEntry(event) {
