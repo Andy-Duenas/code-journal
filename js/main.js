@@ -41,6 +41,7 @@ $form.addEventListener('submit', function (event) {
   $entryformDiv.className = 'hidden';
   $entriesDiv.className = 'entries';
   data.view = 'entries';
+  $deleteButton.className = 'delete-button invisible';
   $form.reset();
 });
 
@@ -116,6 +117,7 @@ $entriesLink.addEventListener('click', function (event) {
   $form.reset();
   $img.setAttribute('src', 'images/placeholder-image-square.jpg');
   $entryformDiv.className = 'hidden';
+  $deleteButton.className = 'delete-button invisible';
   $entriesDiv.className = 'entries';
   data.view = 'entries';
   data.editing = null;
@@ -131,6 +133,7 @@ function prePopulate(dataToEdit) {
   $entriesDiv.className = 'hidden';
   $entryformDiv.className = 'entries';
   data.view = 'entry-form';
+  $deleteButton.className = 'delete-button';
   $form.elements.title.value = dataToEdit.title;
   $form.elements.url.value = dataToEdit.src;
   $form.elements.imgdescription.value = dataToEdit.textArea;
