@@ -1,5 +1,4 @@
 /* eslint-disable eqeqeq */
-/* eslint-disable no-console */
 /* eslint-disable no-global-assign */
 /* global data */
 /* exported data */
