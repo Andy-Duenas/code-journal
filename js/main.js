@@ -173,4 +173,11 @@ $cancelDelete.addEventListener('click', function (event) {
 $deleteButtonForReal.addEventListener('click', function (event) {
   checkForPrevData(data.editing, 'delete');
   $deleteBackground.className = 'background-off';
+  $form.reset();
+  $img.setAttribute('src', 'images/placeholder-image-square.jpg');
+  $entryformDiv.className = 'hidden';
+  $deleteButton.className = 'delete-button invisible';
+  $entriesDiv.className = 'entries';
+  data.view = 'entries';
+  data.editing = null;
 });
