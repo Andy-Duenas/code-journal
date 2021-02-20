@@ -31,7 +31,7 @@ $form.addEventListener('submit', function (event) {
   entryObj.textArea = $form.elements.imgdescription.value;
 
   if (data.editing != null) {
-    checkForPrevData(entryObj);
+    checkForPrevData(entryObj, 'edit');
     data.editing = null;
   } else {
     entryObj.entryId = data.nextEntryId;
@@ -47,16 +47,21 @@ $form.addEventListener('submit', function (event) {
   $form.reset();
 });
 
-function checkForPrevData(dataToUpdate) {
+function checkForPrevData(dataToUpdate, type) {
   var $li = document.querySelectorAll('li');
   for (var z = 0; z < data.entries.length; z++) {
     if (data.editing.entryId == data.entries[z].entryId) {
-      data.entries[z].title = dataToUpdate.title;
-      data.entries[z].textArea = dataToUpdate.textArea;
-      data.entries[z].src = dataToUpdate.src;
-      dataToUpdate.entryId = z;
-
-      $li[z].replaceWith(treeMaker(dataToUpdate));
+      if (type === 'edit') {
+        data.entries[z].title = dataToUpdate.title;
+        data.entries[z].textArea = dataToUpdate.textArea;
+        data.entries[z].src = dataToUpdate.src;
+        dataToUpdate.entryId = z;
+        $li[z].replaceWith(treeMaker(dataToUpdate));
+      }
+      if (type === 'delete') {
+        data.entries.splice(z, 1);
+        $li[z].remove();
+      }
     }
   }
 }
@@ -158,9 +163,7 @@ function editEntry(event) {
 $ulElement.addEventListener('click', editEntry);
 
 $deleteButton.addEventListener('click', function (event) {
-
   $deleteBackground.className = 'background';
-
 });
 
 $cancelDelete.addEventListener('click', function (event) {
@@ -168,5 +171,6 @@ $cancelDelete.addEventListener('click', function (event) {
 });
 
 $deleteButtonForReal.addEventListener('click', function (event) {
-
+  checkForPrevData(data.editing, 'delete');
+  $deleteBackground.className = 'background-off';
 });
