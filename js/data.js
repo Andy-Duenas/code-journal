@@ -8,12 +8,12 @@ var data = {
   nextEntryId: 1
 };
 
-var prevData = localStorage.getItem('jv-local-storage');
+var prevData = localStorage.getItem('jv-local-journal');
 if (prevData !== null) {
   data = JSON.parse(prevData);
 }
 
 window.addEventListener('beforeunload', function (event) {
   var dataJSON = JSON.stringify(data);
-  localStorage.setItem('jv-local-storage', dataJSON);
+  localStorage.setItem('jv-local-journal', dataJSON);
 });
